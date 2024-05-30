@@ -1,3 +1,8 @@
+<?php
+session_start();
+$isLoggedIn = isset($_SESSION['username']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,6 +63,11 @@
                 <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Fasilitas</a>
                 <a href="kontak.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
                 <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
+                <?php if ($isLoggedIn): ?>
+                    <span class="text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Welcome, <?php echo $_SESSION['username']; ?></span>
+                <?php else: ?>
+                    <a href="login.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">SIGN IN</a>
+                <?php endif; ?>
             </div>
         </nav>
     </header>
@@ -123,166 +133,60 @@
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden">
                         <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Guru 1">
                         <div class="p-4">
-                            <h5 class="text-gray-900 font-bold text-xl mb-2">Gatot Pramono,S.Si</h5>
-                            <p class="font-normal text-gray-700">Guru, Pemb OSIS</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Guru 1">
-                        <div class="p-4">
-                            <h5 class="text-gray-900 font-bold text-xl mb-2">Ayu Rudiningtyas,SE</h5>
-                            <p class="font-normal text-gray-700">Bendahara Sekolah</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Guru 1">
-                        <div class="p-4">
-                            <h5 class="text-gray-900 font-bold text-xl mb-2">Banu Cahyoningtyas</h5>
-                            <p class="font-normal text-gray-700">Kepala Tata Usaha</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Guru 1">
-                        <div class="p-4">
-                            <h5 class="text-gray-900 font-bold text-xl mb-2">Defri Prasetya</h5>
-                            <p class="font-normal text-gray-700">Kesiswaan</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Guru 1">
-                        <div class="p-4">
-                            <h5 class="text-gray-900 font-bold text-xl mb-2">M. Sholeh,S.Ag</h5>
-                            <p class="font-normal text-gray-700">Guru</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Guru 1">
-                        <div class="p-4">
-                            <h5 class="text-gray-900 font-bold text-xl mb-2">Cicik Tri Mulyani,S.PdI</h5>
-                            <p class="font-normal text-gray-700">Guru</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Guru 1">
-                        <div class="p-4">
-                            <h5 class="text-gray-900 font-bold text-xl mb-2">Nurefi Sukardaningsih,S.Pdi</h5>
-                            <p class="font-normal text-gray-700">Guru</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Guru 1">
-                        <div class="p-4">
-                            <h5 class="text-gray-900 font-bold text-xl mb-2">Nico Istyoprabowo</h5>
-                            <p class="font-normal text-gray-700">Guru</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Guru 1">
-                        <div class="p-4">
-                            <h5 class="text-gray-900 font-bold text-xl mb-2">Al Hafiz Abdillah</h5>
-                            <p class="font-normal text-gray-700">Guru</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Guru 1">
-                        <div class="p-4">
-                            <h5 class="text-gray-900 font-bold text-xl mb-2">Maulana Zaenal W,S.Kom</h5>
-                            <p class="font-normal text-gray-700">Guru</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Guru 1">
-                        <div class="p-4">
-                            <h5 class="text-gray-900 font-bold text-xl mb-2">Maulana Zaenal W,S.Kom</h5>
-                            <p class="font-normal text-gray-700">Guru</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Guru 1">
-                        <div class="p-4">
-                            <h5 class="text-gray-900 font-bold text-xl mb-2">Gita Ciptaningtyas,M.Pd</h5>
-                            <p class="font-normal text-gray-700">Guru</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Guru 1">
-                        <div class="p-4">
-                            <h5 class="text-gray-900 font-bold text-xl mb-2">Ayu Zuliaty Indiana</h5>
-                            <p class="font-normal text-gray-700">Guru</p>
+                            <h5 class="text-gray-900 font-bold text-xl mb-2">Hasanah Salamah, S.Pd</h5>
+                            <p class="font-normal text-gray-700">Guru Akuntansi</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Tenaga Pendidik -->
+        <!-- Staff -->
         <section class="mb-6">
-            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Tenaga Pendidik SMK MAKARYA TANGERANG</h2>
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Staff SMK MAKARYA TANGERANG</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 <div class="p-4">
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Tenaga Pendidik 1">
+                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Staff 1">
                         <div class="p-4">
-                            <h5 class="text-gray-900 font-bold text-xl mb-2">Cipto Wasono, S.Pd</h5>
-                            <p class="font-normal text-gray-700">Staff Tata Usaha</p>
+                            <h5 class="text-gray-900 font-bold text-xl mb-2">Euis Siti Aisyah</h5>
+                            <p class="font-normal text-gray-700">TU</p>
                         </div>
                     </div>
                 </div>
                 <div class="p-4">
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Tenaga Pendidik 1">
+                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Staff 1">
                         <div class="p-4">
-                            <h5 class="text-gray-900 font-bold text-xl mb-2">Dika Prasatria, S.Pd</h5>
-                            <p class="font-normal text-gray-700">Sie Perpustakaan</p>
+                            <h5 class="text-gray-900 font-bold text-xl mb-2">Dedi Iskandar</h5>
+                            <p class="font-normal text-gray-700">Satpam</p>
                         </div>
                     </div>
                 </div>
                 <div class="p-4">
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Tenaga Pendidik 1">
+                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Staff 1">
                         <div class="p-4">
-                            <h5 class="text-gray-900 font-bold text-xl mb-2">Anjar Wahid</h5>
-                            <p class="font-normal text-gray-700">Tendik Layanan Khusus</p>
+                            <h5 class="text-gray-900 font-bold text-xl mb-2">Susanti, SE</h5>
+                            <p class="font-normal text-gray-700">TU</p>
                         </div>
                     </div>
                 </div>
-                <div class="p-4">
-                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img class="w-full h-40 object-cover" src="fotokosong.jpg" alt="Foto Tenaga Pendidik 1">
-                        <div class="p-4">
-                            <h5 class="text-gray-900 font-bold text-xl mb-2">Awang Latifurrohman</h5>
-                            <p class="font-normal text-gray-700">Tendik Layanan Khusus</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Additional cards for other staff would be similarly adjusted -->
             </div>
         </section>
     </main>
+
+    <footer class="bg-gray-800 text-white py-6 mt-6">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div>
+                <p>&copy; 2023 SMK MAKARYA TANGERANG. All rights reserved.</p>
+            </div>
+            <div>
+                <a href="#" class="text-white hover:text-gray-400 mx-2">Privacy Policy</a>
+                <a href="#" class="text-white hover:text-gray-400 mx-2">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.0/dist/flowbite.min.js"></script>
 </body>

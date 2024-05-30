@@ -66,7 +66,7 @@ $isLoggedIn = isset($_SESSION['username']);
                 <?php if ($isLoggedIn): ?>
                     <span class="text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Welcome, <?php echo $_SESSION['username']; ?></span>
                 <?php else: ?>
-                    <a href="login.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">SIGN IN</a>
+                    <a href="login.php" class="bg-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">SIGN IN</a>
                 <?php endif; ?>
             </div>
         </nav>

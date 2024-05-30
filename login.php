@@ -79,7 +79,7 @@ if (isset($_POST['submit'])) { // Check if form is submitted
         <span>or use your account</span>
         <div class="social-container">
           <a href="#" class="social"><i class="lni lni-facebook-fill"></i></a>
-          <a href="landingpage.html" class="social"><i class="lni lni-google"></i></a>
+          <a href="landingpage.php" class="social"><i class="lni lni-google"></i></a>
           <a href="#" class="social"><i class="lni lni-instagram-fill"></i></a>
         </div>
       </form>

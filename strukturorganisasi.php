@@ -20,7 +20,7 @@ $isLoggedIn = isset($_SESSION['username']);
                 <img class="max-h-16 w-auto" src="logo.png" alt="Logo">
             </div>
             <div class="hidden sm:flex space-x-4 ml-auto">
-                <a href="landingpage.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                <a href="landingpage.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
                 <div class="relative">
                     <button onclick="this.nextElementSibling.classList.toggle('hidden');"
                         class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center">
@@ -32,11 +32,11 @@ $isLoggedIn = isset($_SESSION['username']);
                         </svg>
                     </button>
                     <div class="hidden absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-                        <a href="sejarah.html"
+                        <a href="sejarah.php"
                             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sejarah</a>
-                        <a href="visi_misi.html"
+                        <a href="visi_misi.php"
                             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Visi dan Misi</a>
-                        <a href="strukturorganisasi.html"
+                        <a href="strukturorganisasi.php"
                             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Struktur Organisasi</a>
                     </div>
                 </div>
@@ -51,22 +51,22 @@ $isLoggedIn = isset($_SESSION['username']);
                         </svg>
                     </button>
                     <div class="hidden absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-                        <a href="akuntansi.html"
+                        <a href="akuntansi.php"
                             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Akuntansi Keuangan
                             Lembaga</a>
-                        <a href="bisnis.html"
+                        <a href="bisnis.php"
                             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bisnis Daring &
                             Pemasaran</a>
                     </div>
                 </div>
                 <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kegiatan</a>
                 <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Fasilitas</a>
-                <a href="kontak.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
+                <a href="kontak.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
                 <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
                 <?php if ($isLoggedIn): ?>
                     <span class="text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Welcome, <?php echo $_SESSION['username']; ?></span>
                 <?php else: ?>
-                    <a href="login.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">SIGN IN</a>
+                    <a href="login.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">SIGN IN</a>
                 <?php endif; ?>
             </div>
         </nav>

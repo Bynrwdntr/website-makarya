@@ -1,3 +1,7 @@
+<?php
+session_start();
+$username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest';
+?>
 <!DOCTYPE html>
 <html lang="id">
 
@@ -17,7 +21,7 @@
                 <img class="max-h-16 w-auto" src="logo.png" alt="Logo">
             </div>
             <div class="hidden sm:flex space-x-4 ml-auto">
-                <a href="landingpage.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                <a href="landingpage.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
                 <div class="relative">
                     <button onclick="this.nextElementSibling.classList.toggle('hidden');"
                         class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center">
@@ -29,12 +33,9 @@
                         </svg>
                     </button>
                     <div class="hidden absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-                        <a href="sejarah.html"
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sejarah</a>
-                        <a href="visi_misi.html"
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Visi dan Misi</a>
-                        <a href="strukturorganisasi.html"
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Struktur Organisasi</a>                        
+                        <a href="sejarah.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sejarah</a>
+                        <a href="visi_misi.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Visi dan Misi</a>
+                        <a href="strukturorganisasi.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Struktur Organisasi</a>                        
                     </div>
                 </div>
                 <div class="relative">
@@ -48,23 +49,27 @@
                         </svg>
                     </button>
                     <div class="hidden absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-                        <a href="akuntansi.html"
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Akuntansi Keuangan
-                            Lembaga</a>
-                        <a href="bisnis.html"
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bisnis Daring &
-                            Pemasaran</a>
+                        <a href="akuntansi.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Akuntansi Keuangan Lembaga</a>
+                        <a href="bisnis.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bisnis Daring & Pemasaran</a>
                     </div>
                 </div>
                 <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kegiatan</a>
                 <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Fasilitas</a>
-                <a href="kontak.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
+                <a href="kontak.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
                 <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
             </div>
-            <div class="login" >
-                        <a href="login.html" class="block px-4 py-2 text-sm text-green-600 hover:bg-gray-100">
-                            <button>SIGN IN</button></a>
-                    </div>
+            <div class="login flex items-center">
+                <?php if ($username == 'Guest'): ?>
+                    <a href="login.php" class="block px-4 py-2 text-sm text-green-600 hover:bg-gray-100">
+                        <button>SIGN IN</button>
+                    </a>
+                <?php else: ?>
+                    <span class="text-white mr-4">Welcome, <?php echo htmlspecialchars($username); ?></span>
+                    <a href="logout.php" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">
+                        <button>LOGOUT</button>
+                    </a>
+                <?php endif; ?>
+            </div>
         </nav>
     </header>
 
@@ -116,12 +121,13 @@
                     class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30 group-hover:bg-black/50 group-focus:ring-4 group-focus:ring-black group-focus:outline-none">
                     <svg class="w-6 h-6 text-white" aria-hidden="true" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 5l7 7-7 7"></path>
+                            d="M9 5l7 7-7-7"></path>
                     </svg>
                     <span class="sr-only">Next</span>
                 </span>
             </button>
         </div>
+        
     </main>
 
     <footer class="bg-gray-800 text-white py-8">

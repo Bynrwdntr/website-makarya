@@ -9,18 +9,24 @@ if (isset($_POST['submit'])) {
     if (empty($email) || empty($password)) {
         $errorMsg = "Please fill in both email and password fields.";
     } else {
-        $connection = mysqli_connect("localhost", "admin", "admin", "mydatabase");
+        // Update these variables with your actual database information
+        $servername = "localhost";
+        $dbUsername = "root"; // ganti dengan username database Anda
+        $dbPassword = ""; // ganti dengan password database Anda
+        $dbname = "mydatabase";
 
-        if (!$connection) {
-            $errorMsg = "Failed to connect to the database: " . mysqli_connect_error();
+        $connection = new mysqli($servername, $dbUsername, $dbPassword, $dbname);
+
+        if ($connection->connect_error) {
+            $errorMsg = "Failed to connect to the database: " . $connection->connect_error;
         } else {
             $sql = "SELECT * FROM users WHERE email=?";
-            $stmt = mysqli_prepare($connection, $sql);
-            mysqli_stmt_bind_param($stmt, "s", $email);
-            mysqli_stmt_execute($stmt);
-            $result = mysqli_stmt_get_result($stmt);
+            $stmt = $connection->prepare($sql);
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $result = $stmt->get_result();
 
-            if ($row = mysqli_fetch_assoc($result)) {
+            if ($row = $result->fetch_assoc()) {
                 if (password_verify($password, $row['password'])) {
                     $_SESSION['email'] = $email;
                     header("Location: success.html");
@@ -32,8 +38,8 @@ if (isset($_POST['submit'])) {
                 $errorMsg = "Invalid email or password.";
             }
 
-            mysqli_stmt_close($stmt);
-            mysqli_close($connection);
+            $stmt->close();
+            $connection->close();
         }
     }
 }

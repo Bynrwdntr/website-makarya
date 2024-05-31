@@ -2,7 +2,7 @@
 include 'config.php';
 
 $email = 'admin@gmail.com';
-$password = 'admin123'; // Password plain text yang akan di-hash
+$password = 'admin'; // Password plain text yang akan di-hash
 $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
 $sql = "INSERT INTO users (email, password) VALUES (?, ?)";

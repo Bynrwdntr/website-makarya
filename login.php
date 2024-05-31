@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
     if (empty($email) || empty($password)) {
         $errorMsg = "Please fill in both email and password fields.";
     } else {
-        $connection = mysqli_connect("localhost", "admin", "admin", "mydatabase");
+        $connection = mysqli_connect("localhost", "admin", "bayu030702", "mydatabase");
 
         if (!$connection) {
             $errorMsg = "Failed to connect to the database: " . mysqli_connect_error();
@@ -39,6 +39,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +56,7 @@ if (isset($_POST['submit'])) {
             <div class="flex justify-center mb-6">
                 <img src="logo.jpg" alt="Logo" class="h-52">
             </div>
-            <form action="login.php" method="post" class="space-y-6">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="space-y-6">
                 <div class="relative">
                     <input type="email" name="email" placeholder="Email Address"
                         class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-purple-600 focus:outline-none">

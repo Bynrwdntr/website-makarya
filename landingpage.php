@@ -1,10 +1,13 @@
 <?php
 session_start();
-$isLoggedIn = isset($_SESSION['username']);
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit;
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +16,6 @@ $isLoggedIn = isset($_SESSION['username']);
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5/dist/flowbite.min.css" />
 </head>
-
 <body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
 <header class="shadow-md bg-gray-800">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
@@ -47,8 +49,8 @@ $isLoggedIn = isset($_SESSION['username']);
                         Program Keahlian
                         <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 9l-7 7-7-7"></path>
+                            <path stroke-linecap="round
+                            d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
                     <div class="hidden absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
@@ -66,6 +68,7 @@ $isLoggedIn = isset($_SESSION['username']);
                 <a href="pendaftaran.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
                 <?php if ($isLoggedIn): ?>
                     <span class="text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Welcome, <?php echo $_SESSION['username']; ?></span>
+                    <a href="logout.php" class="bg-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">LOG OUT</a>
                 <?php else: ?>
                     <a href="login.php" class="bg-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">SIGN IN</a>
                 <?php endif; ?>
@@ -73,8 +76,7 @@ $isLoggedIn = isset($_SESSION['username']);
         </nav>
     </header>
 
-    <main class="
-    flex-grow">
+    <main class="flex-grow">
         <div id="gallery" class="relative w-full" data-carousel="slide">
             <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
@@ -138,8 +140,7 @@ $isLoggedIn = isset($_SESSION['username']);
 
         <section class="mt-8">
             <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">Program Keahlian</h2>
-            <div class="grid grid-cols-1 md:grid-cols-
-            2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-lg font-semibold mb-4 text-center text-gray-800">Akuntansi Keuangan Lembaga</h3>
                     <p class="text-gray-600 text-center">

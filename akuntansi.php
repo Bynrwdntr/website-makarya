@@ -34,7 +34,7 @@ $isLoggedIn = isset($_SESSION['username']);
                             <a href="visi_misi.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Visi dan Misi</a>
                             <a href="strukturorganisasi.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Struktur Organisasi</a>
                         </div>
-                    </div> dadang
+                    </div>
                     <!-- Dropdown for Program Keahlian -->
                     <div class="relative">
                         <button onclick="this.nextElementSibling.classList.toggle('hidden');" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">

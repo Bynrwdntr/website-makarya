@@ -1,4 +1,5 @@
 <?php
+session_start();
 $errorMsg = '';
 
 if (isset($_POST['submit'])) {
@@ -13,15 +14,20 @@ if (isset($_POST['submit'])) {
         if (!$connection) {
             $errorMsg = "Failed to connect to the database: " . mysqli_connect_error();
         } else {
-            $sql = "SELECT * FROM users WHERE email=? AND password=?";
+            $sql = "SELECT * FROM users WHERE email=?";
             $stmt = mysqli_prepare($connection, $sql);
-            mysqli_stmt_bind_param($stmt, "ss", $email, $password);
+            mysqli_stmt_bind_param($stmt, "s", $email);
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
 
-            if (mysqli_num_rows($result) > 0) {
-                header("Location: success.html");
-                exit;
+            if ($row = mysqli_fetch_assoc($result)) {
+                if (password_verify($password, $row['password'])) {
+                    $_SESSION['email'] = $email;
+                    header("Location: success.html");
+                    exit;
+                } else {
+                    $errorMsg = "Invalid email or password.";
+                }
             } else {
                 $errorMsg = "Invalid email or password.";
             }
@@ -55,12 +61,12 @@ if (isset($_POST['submit'])) {
             <form action="login.php" method="post" class="space-y-6">
                 <div class="relative">
                     <input type="email" name="email" placeholder="Email Address"
-                        class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-purple-600 focus:outline-none">
+                        class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-purple-600 focus:outline-none" required>
                     <i class="lni lni-envelope text-gray-400 absolute top-3 right-4"></i>
                 </div>
                 <div class="relative">
                     <input type="password" name="password" placeholder="Password"
-                        class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-purple-600 focus:outline-none">
+                        class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-purple-600 focus:outline-none" required>
                     <i class="lni lni-lock text-gray-400 absolute top-3 right-4"></i>
                 </div>
                 <div class="flex justify-between items-center">

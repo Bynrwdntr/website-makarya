@@ -17,7 +17,7 @@ $isLoggedIn = isset($_SESSION['username']);
 </head>
 
 <body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
-    <header class="shadow-md bg-gray-800">
+    <header class="shadow-md bg-gray-800 sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
             <div class="flex items-center space-x-4">
                 <img class="max-h-16 w-auto" src="logo.png" alt="Logo">

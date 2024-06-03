@@ -4,6 +4,7 @@ $isLoggedIn = isset($_SESSION['username']);
 ?>
 
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,29 +53,76 @@ $isLoggedIn = isset($_SESSION['username']);
                     <a href="login.php" class="bg-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">SIGN IN</a>
                 <?php endif; ?>
                 </div>
+            </div>
         </div>
-    </div>
-</nav>
-<section class="bg-white dark:bg-gray-900">
-    <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Contact Us</h2>
-        <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
-        <form action="#" class="space-y-8">
-            <div>
-                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
-                <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="container mx-auto px-5 py-24">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-medium text-gray-900 mb-4">Peta Alamat</h1>
+            <p class="text-base leading-relaxed">Hubungi kami melalui form di bawah ini atau kunjungi lokasi sekolah kami yang tercantum di peta.</p>
+        </div>
+        <div class="flex justify-center">
+            <!-- Google Map Embed -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1125326046563!2d106.7269287!3d-6.248899399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fa77d582a96f%3A0x5d82a7661fb0d3c4!2sSMK%20Makarya!5e0!3m2!1sid!2sid!4v1717398720684!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-gray-300 mt-8">
+        <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row justify-between">
+            <div class="w-full sm:w-auto sm:px-4 mb-4 sm:mb-0">
+                <h2 class="title-font font-medium text-gray-400 tracking-widest text-sm mb-3">HUBUNGI KAMI:</h2>
+                <nav class="list-none mb-10">
+                    <li>
+                        <a href="https://wa.me/1234567890" class="text-gray-400 hover:text-gray-200">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.477 2 2 6.477 2 12c0 1.919.542 3.705 1.478 5.241L2 22l4.887-1.269A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8.947 8.947 0 01-4.753-1.361L7 18l-.264.077A7.973 7.973 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8zm3.97-5.273l-1.204-.551a1.122 1.122 0 00-1.126.095 4.99 4.99 0 01-1.676.659c-1.238.256-2.297-.121-3.182-1.009-1.56-1.558-2.289-3.145-2.187-4.757a4.95 4.95 0 01.704-2.4 1.118 1.118 0 00-.28-1.408L7.27 7.28a1.121 1.121 0 00-1.271-.08 6.345 6.345 0 00-1.723 1.28A7.947 7.947 0 002 12c0 4.418 3.582 8 8 8a7.95 7.95 0 004.632-1.482 6.342 6.342 0 001.28-1.723 1.119 1.119 0 00-.087-1.27z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:smkm@makarya.sch.id" class="text-gray-400 hover:text-gray-200">smkm@makarya.sch.id</a>
+                    </li>
+                </nav>
             </div>
-            <div>
-                <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Subject</label>
-                <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Let us know how we can help you" required>
+            <div class="w-full sm:w-auto sm:px-4 mb-4 sm:mb-0 text-center">
+                <h2 class="title-font font-medium text-gray-400 tracking-widest text-sm mb-3">IKUTI KAMI:</h2>
+                <nav class="list-none mb-10 flex justify-center space-x-4">
+                    <li>
+                    <a href="https://www.instagram.com/smk.makaryalarangan/" class="text-gray-400 hover:text-gray-200">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19.615 3.184c-2.108-1.298-5.527-1.531-7.568-1.531s-5.462.234-7.568 1.531c-2.13 1.304-3.147 3.437-3.147 6.416v4.801c0 2.98 1.017 5.112 3.147 6.416 2.108 1.298 5.527 1.531 7.568 1.531s5.462-.234 7.568-1.531c2.13-1.304 3.147-3.437 3.147-6.416v-4.801c0-2.98-1.017-5.112-3.147-6.416zm-7.615 12.919c-3.151 0-5.682-2.531-5.682-5.682s2.531-5.682 5.682-5.682 5.682 2.531 5.682 5.682-2.531 5.682-5.682 5.682zm6.448-10.573c-.737 0-1.335-.598-1.335-1.335s.598-1.335 1.335-1.335 1.335.598 1.335 1.335-.598 1.335-1.335 1.335zm-6.448 1.946c-2.025 0-3.674 1.649-3.674 3.674s1.649 3.674 3.674 3.674 3.674-1.649 3.674-3.674-1.649-3.674-3.674-3.674z"/>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/@smkmakaryatangerang4734" class="text-gray-400 hover:text-gray-200">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.54 6.42c-.2-1.42-.85-2.72-2.26-3.33-2.05-.91-10.26-.91-10.26-.91s-8.21 0-10.26.91c-1.41.61-2.06 1.91-2.26 3.33-.23 1.63-.23 5.03-.23 5.03s0 3.39.23 5.03c.2 1.42.85 2.72 2.26 3.33 2.05.91 10.26.91 10.26.91s8.21 0 10.26-.91c1.41-.61 2.06-1.91 2.26-3.33.23-1.63.23-5.03.23-5.03s0-3.39-.23-5.03zm-13.95 8.99v-7.86l6.15 3.93-6.15 3.93z"/>
+                    </svg>
+                </a>
+                    </li>
+                </nav>
             </div>
-            <div class="sm:col-span-2">
-                <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
-                <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
+            <div class="w-full sm:w-auto sm:px-4 text-right">
+                <h2 class="title-font font-medium text-gray-400 tracking-widest text-sm mb-3">ALAMAT:</h2>
+                <nav class="list-none mb-10">
+                    <li>
+                        <span class="text-gray-400">Jalan Makarya No. 123</span>
+                    </li>
+                    <li>
+                        <span class="text-gray-400">Kecamatan Makarya, Kota Makarya</span>
+                    </li>
+                    <li>
+                        <span class="text-gray-400">Kode Pos 12345</span>
+                    </li>
+                </nav>
             </div>
-            <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send message</button>
-        </form>
-    </div>
-</section>
+        </div>
+          <div class="mt-4 text-center">
+                <p class="text-gray-300">&copy; 2023 SMK MAKARYA 3 TANGERANG. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

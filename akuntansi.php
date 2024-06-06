@@ -124,8 +124,8 @@ $isLoggedIn = isset($_SESSION['username']);
         </ul>
     </div>
 </main>
- <!-- Footer Section -->
- <footer class="bg-gray-800 text-gray-300 mt-8">
+    <!-- Footer Section -->
+<footer class="bg-gray-800 text-gray-300 mt-8">
         <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row justify-between">
             <div class="w-full sm:w-auto sm:px-4 mb-4 sm:mb-0">
                 <h2 class="title-font font-medium text-gray-400 tracking-widest text-sm mb-3">HUBUNGI KAMI:</h2>

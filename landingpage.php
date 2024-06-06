@@ -136,7 +136,7 @@ $isLoggedIn = isset($_SESSION['username']);
 
     <section id="programs" class="py-16 bg-gray-200" data-aos="fade-up">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-8">Our Programs</h2>
+            <h2 class="text-3xl font-bold mb-8">Program Kami</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
                     <h3 class="text-xl font-bold mb-4">Akuntansi dan Keuangan Lembaga</h3>
@@ -210,7 +210,7 @@ $isLoggedIn = isset($_SESSION['username']);
                         </a>
                     </li>
                     <li>
-                        <a href="mailto:smkm@makarya.sch.id" class="text-gray-400 hover:text-gray-200">smkm@makarya.sch.id</a>
+                        <a href="mailto:smk.makaryalarangan@gmail.com" class="text-gray-400 hover:text-gray-200">smk.makaryalarangan@gmail.com</a>
                     </li>
                 </nav>
             </div>

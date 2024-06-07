@@ -1,44 +1,29 @@
-<?php
-session_start();
+<?php 
+require 'conn.php';
+
 $errorMsg = '';
 
-if (isset($_POST['submit'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+if ( isset($_POST["login"]) ) {
+    
+    // Menggunakan nama input yang benar dari form
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
-    if (empty($email) || empty($password)) {
-        $errorMsg = "Please fill in both email and password fields.";
-    } else {
-        $connection = mysqli_connect("localhost", "admin", "bayu030702", "mydatabase");
+    // Menggunakan prepared statement untuk mencegah SQL Injection
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-        if (!$connection) {
-            $errorMsg = "Failed to connect to the database: " . mysqli_connect_error();
-        } else {
-            $sql = "SELECT * FROM users WHERE email=?";
-            $stmt = mysqli_prepare($connection, $sql);
-            mysqli_stmt_bind_param($stmt, "s", $email);
-            mysqli_stmt_execute($stmt);
-            $result = mysqli_stmt_get_result($stmt);
-
-            if ($row = mysqli_fetch_assoc($result)) {
-                if (password_verify($password, $row['password'])) {
-                    $_SESSION['username'] = $row['email'];
-                    header("Location: landingpage.php");
-                    exit;
-                } else {
-                    $errorMsg = "Invalid email or password.";
-                }
-            } else {
-                $errorMsg = "Invalid email or password.";
-            }
-
-            mysqli_stmt_close($stmt);
-            mysqli_close($connection);
-        }
+    // Cek username
+    if ( mysqli_num_rows($result) === 1 ){
+        header("location: landingpage.php");
+        exit;
     }
+
+    $errorMsg = "username/password salah";
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +43,7 @@ if (isset($_POST['submit'])) {
             </div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="space-y-6">
                 <div class="relative">
-                    <input type="email" name="email" placeholder="Email Address"
+                    <input type="email" name="username" placeholder="Email Address"
                         class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-purple-600 focus:outline-none">
                     <i class="lni lni-envelope text-gray-400 absolute top-3 right-4"></i>
                 </div>
@@ -76,7 +61,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <button type="submit"
                     class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md text-lg font-semibold"
-                    name="submit">Log In</button>
+                    name="login">Log In</button>
                 <div class="text-center text-gray-600">or log in with</div>
                 <div class="flex justify-center space-x-4">
                     <a href="#" class="text-gray-600 hover:text-blue-600">

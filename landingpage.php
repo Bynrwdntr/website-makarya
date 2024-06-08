@@ -8,7 +8,7 @@ $isLoggedIn = isset($_SESSION['username']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMK MAKARYA 3 TANGERANG</title>
+    <title>SMK MAKARYA TANGERANG</title>
     <link rel="icon" type="image/x-icon" href="logo.jpg">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.1/flowbite.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">

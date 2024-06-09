@@ -87,21 +87,8 @@ if (isset($_POST["login"])) {
                         <input type="checkbox" class="form-checkbox text-blue-600">
                         <span class="ml-2 text-sm text-gray-600">Remember me</span>
                     </label>
-                    <a href="#" class="text-sm text-blue-600 hover:underline">Forgot your password?</a>
                 </div>
                 <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md text-lg font-semibold" name="login">Log In</button>
-                <div class="text-center text-gray-600">or log in with</div>
-                <div class="flex justify-center space-x-4">
-                    <a href="#" class="text-gray-600 hover:text-blue-600">
-                        <i class="lni lni-facebook-fill text-2xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600">
-                        <i class="lni lni-google text-2xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-600 hover:text-blue-600">
-                        <i class="lni lni-instagram-fill text-2xl"></i>
-                    </a>
-                </div>
                 <?php if (!empty($errorMsg)) : ?>
                     <p class="text-red-500"><?php echo $errorMsg; ?></p>
                 <?php endif; ?>

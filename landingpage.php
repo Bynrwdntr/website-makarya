@@ -107,19 +107,19 @@ $result = mysqli_query($conn, $sql);
         <div id="gallery" class="relative w-full" data-carousel="slide">
             <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="foto lapangan makarya.png" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 1">
+                    <img src="gerbang.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 1">
                 </div>
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 2">
+                    <img src="foto lapangan makarya.png" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 2">
                 </div>
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 3">
+                    <img src="labkom.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 3">
                 </div>
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 4">
+                    <img src="perpus.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 4">
                 </div>
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 5">
+                    <img src="ruangkelas.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 5">
                 </div>
             </div>
             <button type="button" class="absolute top-1/2 left-0 z-50 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none transform -translate-y-1/2" data-carousel-prev>

@@ -1,20 +1,39 @@
 <?php
+require 'conn.php';
 session_start();
 $isLoggedIn = isset($_SESSION['username']);
+
+// Periksa koneksi
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Query Database
+$sql = "SELECT * FROM news";
+$result = mysqli_query($conn, $sql);
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Struktur Organisasi SMK Makarya Tangerang</title>
-    <link rel="icon" type="image/x-icon" href="logo.jpg">
+    <title>Berita Sekolah</title>
+    <!-- Menggunakan CDN Flowbite untuk tata letak dan Tailwind CSS untuk styling -->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@1.6.0/dist/flowbite.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-<header class="shadow-md bg-gray-800 sticky top-0 z-50">
+
+<body class="bg-gray-100">
+
+    <div class="container mx-auto flex justify-between items-center px-4">
+        <!-- <h1 class="text-xl font-bold">Berita Sekolah</h1> -->
+    </div>
+
+    <body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+    <header class="shadow-md bg-gray-800 sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
             <div class="flex items-center space-x-4">
                 <img class="max-h-16 w-auto" src="logo.png" alt="Logo">
@@ -46,8 +65,8 @@ $isLoggedIn = isset($_SESSION['username']);
                         <a href="bisnis.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bisnis Daring & Pemasaran</a>
                     </div>
                 </div>
-                <a href="kegiatan.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kegiatan</a>
-                <a href="fasilitas.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Fasilitas</a>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kegiatan</a>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Fasilitas</a>
                 <a href="kontak.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
                 <a href="pendaftaran.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
                 <a href="berita.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Berita</a>
@@ -80,7 +99,6 @@ $isLoggedIn = isset($_SESSION['username']);
             <a href="fasilitas.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Fasilitas</a>
             <a href="kontak.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
             <a href="pendaftaran.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
-            <a href="berita.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Berita</a>
             <?php if ($isLoggedIn): ?>
                 <span class="block text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Welcome, <?php echo $_SESSION['username']; ?></span>
             <?php else: ?>
@@ -88,178 +106,32 @@ $isLoggedIn = isset($_SESSION['username']);
             <?php endif; ?>
         </div>
     </header>
-    <main class="flex-grow">
-        <!-- Pimpinan Sekolah -->
-        <section class="mb-12">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Pimpinan Sekolah SMK MAKARYA TANGERANG</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Mulyadi, S.Pd">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Mulyadi, S.Pd</h5>
-                        <p class="font-normal text-gray-700">Kepala Sekolah</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Dra. Sri Wahyuni">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Dra. Sri Wahyuni</h5>
-                        <p class="font-normal text-gray-700">Wakil Kepala Sekolah</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Guru -->
-        <section class="mb-12">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Guru SMK MAKARYA TANGERANG</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Ratih Sayekti, SE">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Ratih Sayekti, SE</h5>
-                        <p class="font-normal text-gray-700">Kepala Program Bisnis Daring dan Pemasaran</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Wahyuliana, S.Pd">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Wahyuliana, S.Pd</h5>
-                        <p class="font-normal text-gray-700">Kepala Program Akuntansi dan Keuangan Lembaga</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Euis Sri Sugiarti, S.Pd">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Euis Sri Sugiarti, S.Pd</h5>
-                        <p class="font-normal text-gray-700">Guru</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Euis Sri Sugiarti, S.Pd">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Gatot Pramono,S.Si</h5>
-                        <p class="font-normal text-gray-700">Guru, Pemb OSIS</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Euis Sri Sugiarti, S.Pd">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">M. Sholeh,S.Ag</h5>
-                        <p class="font-normal text-gray-700">Guru</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Euis Sri Sugiarti, S.Pd">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Cicik Tri Mulyani,S.PdI</h5>
-                        <p class="font-normal text-gray-700">Guru</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Euis Sri Sugiarti, S.Pd">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Nurefi Sukardaningsih,S.Pdi</h5>
-                        <p class="font-normal text-gray-700">Guru</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Euis Sri Sugiarti, S.Pd">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Nico Istyoprabowo</h5>
-                        <p class="font-normal text-gray-700">Guru</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Euis Sri Sugiarti, S.Pd">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Al Hafiz Abdillah</h5>
-                        <p class="font-normal text-gray-700">Guru</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Euis Sri Sugiarti, S.Pd">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Maulana Zaenal W,S.Kom</h5>
-                        <p class="font-normal text-gray-700">Guru</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Euis Sri Sugiarti, S.Pd">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Gita Ciptaningtyas,M.Pd</h5>
-                        <p class="font-normal text-gray-700">Guru</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Euis Sri Sugiarti, S.Pd">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Ayu Zuliaty Indiana</h5>
-                        <p class="font-normal text-gray-700">Guru</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Staff -->
-        <section class="mb-12">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Staff SMK MAKARYA TANGERANG</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Nama Staff 1">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Cipto Wasono, S.Pd</h5>
-                        <p class="font-normal text-gray-700">Staff Tata Usaha</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Nama Staff 2">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Dika Prasatria, S.Pd</h5>
-                        <p class="font-normal text-gray-700">Sie Perpustakaan</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Nama Staff 3">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Anjar Wahid</h5>
-                        <p class="font-normal text-gray-700">Tendik Layanan Khusus</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Nama Staff 3">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Awang Latifurrohman</h5>
-                        <p class="font-normal text-gray-700">Tendik Layanan Khusus</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Nama Staff 3">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Ayu Rudiningtyas,SE</h5>
-                        <p class="font-normal text-gray-700">Bendahara Sekolah</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Nama Staff 3">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Banu Cahyoningtyas</h5>
-                        <p class="font-normal text-gray-700">Kepala Tata Usaha</p>
-                    </div>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                    <img class="w-full h-48 object-cover" src="fotokosong.jpg" alt="Nama Staff 3">
-                    <div class="p-6">
-                        <h5 class="text-gray-900 font-bold text-xl mb-2">Defri Prasetya</h5>
-                        <p class="font-normal text-gray-700">Kesiswaan</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
 
-   <!-- Footer Section -->
-   <footer class="bg-gray-900 text-gray-300 mt-8">
+
+        <div class="container mx-auto py-8 pb-60">
+            <h2 class="text-2xl font-bold mb-4">Berita Sekolah</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <?php
+                // Looping melalui data berita
+                while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                    <div class="bg-gray-100 p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+                        <?php if (isset($row['image']) && $row['image'] != '') : ?>
+                            <img src="<?php echo $row['image']; ?>" alt="News Image" class="w-full h-48 object-cover mb-4 rounded">
+                        <?php endif; ?>
+                        <h3 class="text-xl font-bold mb-4"><?php echo $row['title']; ?></h3>
+                        <p class="overflow-hidden text-ellipsis whitespace-nowrap"><?php echo $row['content']; ?></p>
+                        <a href="news_detail.php?id=<?php echo $row['id']; ?>" class="text-blue-600 hover:underline">Read more</a>
+                    </div>
+                <?php
+                }
+                ?>
+            </div>
+        </div>
+
+        <footer class="bg-gray-900 text-gray-300 mt-8">
     <div class="container mx-auto py-10 px-5 flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0">
         <!-- Section Kontak -->
         <div class="w-full md:w-1/3 text-center md:text-left">
@@ -337,8 +209,8 @@ $isLoggedIn = isset($_SESSION['username']);
     </div>
 </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.0/dist/flowbite.js"></script>
-    <script>
+<script src="https://unpkg.com/flowbite@1.5/dist/flowbite.min.js"></script>
+<script>
         document.getElementById('mobile-menu-button').onclick = function() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         };
@@ -349,5 +221,7 @@ $isLoggedIn = isset($_SESSION['username']);
             document.getElementById('mobile-menu').classList.toggle('hidden');
         };
     </script>
-</body>
+
+    </body>
+
 </html>

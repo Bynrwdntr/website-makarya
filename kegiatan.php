@@ -15,8 +15,8 @@ $isLoggedIn = isset($_SESSION['username']);
 </head>
 
 <body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
-    <header class="shadow-md bg-gray-800">
-    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+<header class="shadow-md bg-gray-800 sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
             <div class="flex items-center space-x-4">
                 <img class="max-h-16 w-auto" src="logo.png" alt="Logo">
             </div>
@@ -51,6 +51,7 @@ $isLoggedIn = isset($_SESSION['username']);
                 <a href="fasilitas.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Fasilitas</a>
                 <a href="kontak.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
                 <a href="pendaftaran.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
+                <a href="berita.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Berita</a>
                 <?php if ($isLoggedIn): ?>
                     <span class="text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Welcome, <?php echo $_SESSION['username']; ?></span>
                 <?php else: ?>
@@ -80,29 +81,7 @@ $isLoggedIn = isset($_SESSION['username']);
             <a href="fasilitas.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Fasilitas</a>
             <a href="kontak.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
             <a href="pendaftaran.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
-            <?php if ($isLoggedIn): ?>
-                <span class="block text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Welcome, <?php echo $_SESSION['username']; ?></span>
-            <?php else: ?>
-                <a href="login.php" class="block bg-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">SIGN IN</a>
-            <?php endif; ?>
-        </div>
-        <div class="sm:hidden hidden" id="mobile-menu">
-            <a href="landingpage.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-            <button onclick="this.nextElementSibling.classList.toggle('hidden');" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium w-full text-left">Informasi Sekolah</button>
-            <div class="hidden">
-                <a href="sejarah.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sejarah</a>
-                <a href="visi_misi.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Visi dan Misi</a>
-                <a href="strukturorganisasi.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Struktur Organisasi</a>
-            </div>
-            <button onclick="this.nextElementSibling.classList.toggle('hidden');" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium w-full text-left">Program Keahlian</button>
-            <div class="hidden">
-                <a href="akuntansi.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Akuntansi Keuangan Lembaga</a>
-                <a href="bisnis.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bisnis Daring & Pemasaran</a>
-            </div>
-            <a href="kegiatan.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kegiatan</a>
-            <a href="fasilitas.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Fasilitas</a>
-            <a href="kontak.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
-            <a href="pendaftaran.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
+            <a href="berita.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Berita</a>
             <?php if ($isLoggedIn): ?>
                 <span class="block text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Welcome, <?php echo $_SESSION['username']; ?></span>
             <?php else: ?>
@@ -262,35 +241,46 @@ $isLoggedIn = isset($_SESSION['username']);
 
    <!-- Footer Section -->
    <footer class="bg-gray-900 text-gray-300 mt-8">
-    <div class="container mx-auto py-6 px-5 flex flex-wrap sm:flex-nowrap justify-between items-start">
-        <div class="w-full sm:w-1/3 mb-6 sm:mb-0">
+    <div class="container mx-auto py-10 px-5 flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0">
+        <!-- Section Kontak -->
+        <div class="w-full md:w-1/3 text-center md:text-left">
             <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">HUBUNGI KAMI</h2>
-            <nav class="list-none">
-                <li class="mb-2">
-                    <a href="https://wa.me/+6281311121465" class="flex items-center text-gray-400 hover:text-gray-200">
+            <nav class="list-none space-y-2">
+                <li>
+                    <a href="https://wa.me/+6281311121465" class="flex items-center justify-center md:justify-start text-gray-400 hover:text-gray-200">
                         <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 2C6.477 2 2 6.477 2 12c0 1.919.542 3.705 1.478 5.241L2 22l4.887-1.269A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8.947 8.947 0 01-4.753-1.361L7 18l-.264.077A7.973 7.973 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8zm3.97-5.273l-1.204-.551a1.122 1.122 0 00-1.126.095 4.99 4.99 0 01-1.676.659c-1.238.256-2.297-.121-3.182-1.009-1.56-1.558-2.289-3.145-2.187-4.757a4.95 4.95 0 01.704-2.4 1.118 1.118 0 00-.28-1.408L7.27 7.28a1.121 1.121 0 00-1.271-.08 6.345 6.345 0 00-1.723 1.28A7.947 7.947 0 002 12c0 4.418 3.582 8 8 8a7.95 7.95 0 004.632-1.482 6.342 6.342 0 001.28-1.723 1.119 1.119 0 00-.087-1.27z"></path>
-                        </svg>Sri Wahyuni
-                    </a>
-                    <a href="https://wa.me/+6282298743698" class="flex items-center text-gray-400 hover:text-gray-200">
-                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2C6.477 2 2 6.477 2 12c0 1.919.542 3.705 1.478 5.241L2 22l4.887-1.269A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8.947 8.947 0 01-4.753-1.361L7 18l-.264.077A7.973 7.973 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8zm3.97-5.273l-1.204-.551a1.122 1.122 0 00-1.126.095 4.99 4.99 0 01-1.676.659c-1.238.256-2.297-.121-3.182-1.009-1.56-1.558-2.289-3.145-2.187-4.757a4.95 4.95 0 01.704-2.4 1.118 1.118 0 00-.28-1.408L7.27 7.28a1.121 1.121 0 00-1.271-.08 6.345 6.345 0 00-1.723 1.28A7.947 7.947 0 002 12c0 4.418 3.582 8 8 8a7.95 7.95 0 004.632-1.482 6.342 6.342 0 001.28-1.723 1.119 1.119 0 00-.087-1.27z"></path>
-                        </svg>Banu Cahyo
-                    </a>
-                    <a href="https://wa.me/+6285779019823" class="flex items-center text-gray-400 hover:text-gray-200">
-                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2C6.477 2 2 6.477 2 12c0 1.919.542 3.705 1.478 5.241L2 22l4.887-1.269A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8.947 8.947 0 01-4.753-1.361L7 18l-.264.077A7.973 7.973 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8zm3.97-5.273l-1.204-.551a1.122 1.122 0 00-1.126.095 4.99 4.99 0 01-1.676.659c-1.238.256-2.297-.121-3.182-1.009-1.56-1.558-2.289-3.145-2.187-4.757a4.95 4.95 0 01.704-2.4 1.118 1.118 0 00-.28-1.408L7.27 7.28a1.121 1.121 0 00-1.271-.08 6.345 6.345 0 00-1.723 1.28A7.947 7.947 0 002 12c0 4.418 3.582 8 8 8a7.95 7.95 0 004.632-1.482 6.342 6.342 0 001.28-1.723 1.119 1.119 0 00-.087-1.27z"></path>
-                        </svg>Defri Prasetya
+                        </svg>
+                        Sri Wahyuni
                     </a>
                 </li>
                 <li>
-                    <a href="mailto:smk.makaryalarangan@gmail.com" class="text-gray-400 hover:text-gray-200"></a>smk.makaryalarangan@gmail.com
+                    <a href="https://wa.me/+6282298743698" class="flex items-center justify-center md:justify-start text-gray-400 hover:text-gray-200">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 1.919.542 3.705 1.478 5.241L2 22l4.887-1.269A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8.947 8.947 0 01-4.753-1.361L7 18l-.264.077A7.973 7.973 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8zm3.97-5.273l-1.204-.551a1.122 1.122 0 00-1.126.095 4.99 4.99 0 01-1.676.659c-1.238.256-2.297-.121-3.182-1.009-1.56-1.558-2.289-3.145-2.187-4.757a4.95 4.95 0 01.704-2.4 1.118 1.118 0 00-.28-1.408L7.27 7.28a1.121 1.121 0 00-1.271-.08 6.345 6.345 0 00-1.723 1.28A7.947 7.947 0 002 12c0 4.418 3.582 8 8 8a7.95 7.95 0 004.632-1.482 6.342 6.342 0 001.28-1.723 1.119 1.119 0 00-.087-1.27z"></path>
+                        </svg>
+                        Banu Cahyo
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.me/+6285779019823" class="flex items-center justify-center md:justify-start text-gray-400 hover:text-gray-200">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 1.919.542 3.705 1.478 5.241L2 22l4.887-1.269A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8.947 8.947 0 01-4.753-1.361L7 18l-.264.077A7.973 7.973 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8zm3.97-5.273l-1.204-.551a1.122 1.122 0 00-1.126.095 4.99 4.99 0 01-1.676.659c-1.238.256-2.297-.121-3.182-1.009-1.56-1.558-2.289-3.145-2.187-4.757a4.95 4.95 0 01.704-2.4 1.118 1.118 0 00-.28-1.408L7.27 7.28a1.121 1.121 0 00-1.271-.08 6.345 6.345 0 00-1.723 1.28A7.947 7.947 0 002 12c0 4.418 3.582 8 8 8a7.95 7.95 0 004.632-1.482 6.342 6.342 0 001.28-1.723 1.119 1.119 0 00-.087-1.27z"></path>
+                        </svg>
+                        Defri Prasetya
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:smk.makaryalarangan@gmail.com" class="text-gray-400 hover:text-gray-200">
+                        smk.makaryalarangan@gmail.com
+                    </a>
                 </li>
             </nav>
         </div>
-        <div class="w-full sm:w-1/3 mb-6 sm:mb-0 text-center">
+        <!-- Section Ikuti Kami -->
+        <div class="w-full md:w-1/3 flex flex-col items-center">
             <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">IKUTI KAMI</h2>
-            <nav class="list-none flex justify-center space-x-4">
+            <nav class="list-none flex justify-center md:justify-start space-x-4">
                 <li>
                     <a href="https://www.instagram.com/smk.makaryalarangan/" class="text-gray-400 hover:text-gray-200">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -307,13 +297,14 @@ $isLoggedIn = isset($_SESSION['username']);
                 </li>
             </nav>
         </div>
-        <div class="w-full sm:w-1/3 text-right">
+        <!-- Section Alamat -->
+        <div class="w-full md:w-1/3 text-center md:text-right">
             <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">ALAMAT</h2>
-            <nav class="list-none">
-                <li class="mb-2">
+            <nav class="list-none space-y-2">
+                <li>
                     <span class="text-gray-400">Kp Blok Wareng No.58, RT.003/RW.004, Larangan Selatan</span>
                 </li>
-                <li class="mb-2">
+                <li>
                     <span class="text-gray-400">Kecamatan Larangan, Kota Tangerang, Banten</span>
                 </li>
                 <li>

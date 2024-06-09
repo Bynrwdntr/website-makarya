@@ -92,7 +92,7 @@ $isLoggedIn = isset($_SESSION['username']);
         <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Informasi Pendaftaran SMK Makarya Tangerang</h1>
             <div class="max-w-4xl mx-auto">
-                <p class="text-gray-700 text-lg mb-6">Pendaftaran peserta didik baru SMK Makarya 2 Larangan telah dibuka. Berikut adalah informasi mengenai prosedur pendaftaran:</p>
+                <p class="text-gray-700 text-lg mb-6">Pendaftaran peserta didik baru SMK Makarya Tangerang telah dibuka. Berikut adalah informasi mengenai prosedur pendaftaran:</p>
                 <h2 class="text-2xl font-bold text-gray-800 mb-4">Prosedur Pendaftaran</h2>
                 <ol class="list-decimal list-inside text-gray-700 text-lg mb-6">
                     <li>Isi formulir pendaftaran yang tersedia di sekolah.</li>

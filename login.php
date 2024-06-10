@@ -17,37 +17,19 @@ function login($username, $password)
         $stmt->bind_result($id);
         $stmt->fetch();
         $_SESSION['user_id'] = $id;
+        $stmt->close(); // Close the statement here
         return true;
     } else {
+        $stmt->close(); // Close the statement here
         return false;
     }
-
-    $stmt->close();
 }
 
 if (isset($_POST["login"])) {
-
-    // Menggunakan nama input yang benar dari form
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // // Menggunakan prepared statement untuk mencegah SQL Injection
-    // $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
-    // $stmt->bind_param("s", $username);
-    // $stmt->execute();
-    // $result = $stmt->get_result();
-
-    // // Cek username
-    // if ( mysqli_num_rows($result) === 1 ){
-    //     header("location: landingpage.php");
-    //     exit;
-    // }
-
-    // $errorMsg = "username/password salah";
-
     if (login($username, $password)) {
-        // echo "Login successful!";
-        // Redirect or start a session, etc.
         header("Location: http://localhost/website-makarya/admin_panel.php");
         exit();
     } else {
@@ -77,11 +59,11 @@ if (isset($_POST["login"])) {
             </div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="space-y-6">
                 <div class="relative">
-                    <input type="text" name="username" placeholder="Email Address" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-purple-600 focus:outline-none">
+                    <input type="text" name="username" placeholder="Username" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-purple-600 focus:outline-none" required>
                     <i class="lni lni-envelope text-gray-400 absolute top-3 right-4"></i>
                 </div>
                 <div class="relative">
-                    <input type="password" name="password" placeholder="Password" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-purple-600 focus:outline-none">
+                    <input type="password" name="password" placeholder="Password" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-purple-600 focus:outline-none" required>
                     <i class="lni lni-lock text-gray-400 absolute top-3 right-4"></i>
                 </div>
                 <div class="flex justify-between items-center">

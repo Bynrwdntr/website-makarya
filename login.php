@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'conn.php';
 
 $errorMsg = '';
@@ -47,7 +48,7 @@ if (isset($_POST["login"])) {
     if (login($username, $password)) {
         // echo "Login successful!";
         // Redirect or start a session, etc.
-        header("Location: admin_panel.php");
+        header("Location: http://localhost/website-makarya/admin_panel.php");
         exit();
     } else {
         $errorMsg = "Invalid username or password!";

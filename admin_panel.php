@@ -2,10 +2,10 @@
 require 'conn.php';
 session_start();
 
-// if (!isset($_SESSION['user_id'])) {
-//     header("Location: index.php");
-//     exit();
-// }
+if (!isset($_SESSION["user_id"])) {
+    header("Location: http://localhost/website-makarya/login.php/");
+    exit();
+ }
 ?>
 
 <!DOCTYPE html>

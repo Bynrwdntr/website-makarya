@@ -95,7 +95,7 @@ $isLoggedIn = isset($_SESSION['username']);
 
     <div class="flex justify-center items-center my-5">
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <img class="rounded-t-lg" src="fotokosong.jpg" alt="Foto Ketua Program" />
+            <img class="rounded-t-lg" src="img/fotokosong.jpg" alt="Foto Ketua Program" />
             <div class="p-5">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ketua Program</h5>
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Wahyuliana, S.Pd</p>

@@ -21,6 +21,7 @@ $result = mysqli_query($conn, $sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berita Sekolah</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.jpg">
     <!-- Menggunakan CDN Flowbite untuk tata letak dan Tailwind CSS untuk styling -->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@1.6.0/dist/flowbite.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -97,12 +98,7 @@ $result = mysqli_query($conn, $sql);
                 <a href="login.php" class="block bg-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">SIGN IN</a>
             <?php endif; ?>
         </div>
-    </header>
-
-
-
-
-        
+    </header>        
         <header class="bg-blue-800 text-white p-4 text-center">
         <h1 class="text-3xl font-bold">Berita SMK MAKARYA TANGERANG</h1>
         </header>

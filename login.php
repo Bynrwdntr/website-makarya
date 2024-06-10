@@ -63,6 +63,7 @@ if (isset($_POST["login"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.jpg">
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://unpkg.com/flowbite@1.5/dist/flowbite.min.css" rel="stylesheet">

@@ -34,7 +34,7 @@ $result = mysqli_query($conn, $sql);
                 <img class="max-h-16 w-auto" src="img/logo.png" alt="Logo">
             </div>
             <div class="hidden sm:flex space-x-4 ml-auto">
-                <a href="landingpage.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                <a href="index.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
                 <div class="relative">
                     <button onclick="this.nextElementSibling.classList.toggle('hidden');" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center">
                         Informasi Sekolah
@@ -119,7 +119,7 @@ $result = mysqli_query($conn, $sql);
                     <img src="img/perpus.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 4">
                 </div>
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="img//img/ruangkelas.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 5">
+                    <img src="img/ruangkelas.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 5">
                 </div>
             </div>
             <button type="button" class="absolute top-1/2 left-0 z-50 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none transform -translate-y-1/2" data-carousel-prev>
@@ -182,7 +182,7 @@ $result = mysqli_query($conn, $sql);
                     ?>
                         <div class="bg-gray-100 p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
                             <?php if (isset($row['image']) && $row['image'] != '') : ?>
-                                <img src="img/<?php echo $row['image']; ?>" alt="News Image" class="w-full h-48 object-cover mb-4 rounded">
+                                <img src="<?php echo $row['image']; ?>" alt="News Image" class="w-full h-48 object-cover mb-4 rounded">
                             <?php endif; ?>
                             <h3 class="text-xl font-bold mb-4"><?php echo $row['title']; ?></h3>
                             <p class="overflow-hidden text-ellipsis whitespace-nowrap"><?php echo $row['content']; ?></p>

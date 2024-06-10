@@ -110,7 +110,6 @@ $isLoggedIn = isset($_SESSION['username']);
             <ul>
             <li><a class="selected" href="#">Semua</a></li>
                 <li><a href="https://smkmakarya1.sch.id/galeri/album/13">Demo Ekskul</a></li>
-                <li><a href="https://smkmakarya1.sch.id/galeri/album/12">Makarya 1 Competition</a></li>
                 <li><a href="https://smkmakarya1.sch.id/galeri/album/11">Memperingati Hari Kemerdekaan 17 Agustus</a></li>
                 <li><a href="https://smkmakarya1.sch.id/galeri/album/10">Maulid Nabi SAW</a></li>
                 <li><a href="https://smkmakarya1.sch.id/galeri/album/9">Perkemahan Kamis dan Jumat (Perkaju)</a></li>

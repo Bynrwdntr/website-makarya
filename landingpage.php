@@ -19,7 +19,7 @@ $result = mysqli_query($conn, $sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMK MAKARYA 3 TANGERANG</title>
+    <title>SMK MAKARYA TANGERANG</title>
     <link rel="icon" type="image/x-icon" href="logo.jpg">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.1/flowbite.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
@@ -56,8 +56,8 @@ $result = mysqli_query($conn, $sql);
                         </svg>
                     </button>
                     <div class="hidden absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-                        <a href="akuntansi.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Akuntansi Keuangan Lembaga</a>
-                        <a href="bisnis.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bisnis Daring & Pemasaran</a>
+                        <a href="akuntansi.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Akuntansi dan Keuangan Lembaga</a>
+                        <a href="bisnis.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bisnis Daring dan Pemasaran</a>
                     </div>
                 </div>
                 <a href="kegiatan.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kegiatan</a>
@@ -87,8 +87,8 @@ $result = mysqli_query($conn, $sql);
             </div>
             <button onclick="this.nextElementSibling.classList.toggle('hidden');" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium w-full text-left">Program Keahlian</button>
             <div class="hidden">
-                <a href="akuntansi.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Akuntansi Keuangan Lembaga</a>
-                <a href="bisnis.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bisnis Daring & Pemasaran</a>
+                <a href="akuntansi.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Akuntansi dan Keuangan Lembaga</a>
+                <a href="bisnis.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bisnis Daring dan Pemasaran</a>
             </div>
             <a href="kegiatan.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kegiatan</a>
             <a href="fasilitas.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Fasilitas</a>
@@ -143,7 +143,7 @@ $result = mysqli_query($conn, $sql);
         <section class="mt-8">
             <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">Tentang Kami</h2>
             <p class="text-gray-600 text-center max-w-3xl mx-auto">
-                SMK MAKARYA 3 TANGERANG adalah lembaga pendidikan kejuruan yang berkomitmen untuk menghasilkan lulusan yang kompeten dan siap kerja di bidang Akuntansi dan Bisnis Daring & Pemasaran.
+                SMK MAKARYA TANGERANG adalah lembaga pendidikan kejuruan yang berkomitmen untuk menghasilkan lulusan yang kompeten dan siap kerja di bidang Akuntansi dan Bisnis Daring & Pemasaran.
             </p>
         </section>
 
@@ -216,26 +216,6 @@ $result = mysqli_query($conn, $sql);
                 </div>
             </div>
         </section> -->
-        <section id="contact" class="py-16 bg-gray-200" data-aos="fade-up">
-            <div class="container mx-auto text-center">
-                <h2 class="text-3xl font-bold mb-8">Contact Us</h2>
-                <form action="#" method="POST" class="space-y-4 max-w-md mx-auto">
-                    <div>
-                        <label for="name" class="block text-gray-700">Name</label>
-                        <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-200" required>
-                    </div>
-                    <div>
-                        <label for="email" class="block text-gray-700">Email</label>
-                        <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-200" required>
-                    </div>
-                    <div>
-                        <label for="message" class="block text-gray-700">Message</label>
-                        <textarea id="message" name="message" rows="4" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-200" required></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">Send Message</button>
-                </form>
-            </div>
-        </section>
     </main>
 
 

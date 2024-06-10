@@ -8,13 +8,11 @@ $isLoggedIn = isset($_SESSION['username']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Struktur Organisasi SMK Makarya Tangerang</title>
+    <title>Fasilitas SMK Makarya Tangerang</title>
     <link rel="icon" type="image/x-icon" href="logo.jpg">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@1.6.0/dist/flowbite.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-
-<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
 <header class="shadow-md bg-gray-800 sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
             <div class="flex items-center space-x-4">
@@ -43,8 +41,8 @@ $isLoggedIn = isset($_SESSION['username']);
                         </svg>
                     </button>
                     <div class="hidden absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-                        <a href="akuntansi.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Akuntansi Keuangan Lembaga</a>
-                        <a href="bisnis.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bisnis Daring & Pemasaran</a>
+                        <a href="akuntansi.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Akuntansi dan Keuangan Lembaga</a>
+                        <a href="bisnis.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bisnis Daring dan Pemasaran</a>
                     </div>
                 </div>
                 <a href="kegiatan.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kegiatan</a>
@@ -52,9 +50,9 @@ $isLoggedIn = isset($_SESSION['username']);
                 <a href="kontak.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
                 <a href="pendaftaran.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
                 <a href="berita.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Berita</a>
-                <?php if ($isLoggedIn): ?>
+                <?php if ($isLoggedIn) : ?>
                     <span class="text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Welcome, <?php echo $_SESSION['username']; ?></span>
-                <?php else: ?>
+                <?php else : ?>
                     <a href="login.php" class="bg-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">SIGN IN</a>
                 <?php endif; ?>
             </div>
@@ -74,46 +72,48 @@ $isLoggedIn = isset($_SESSION['username']);
             </div>
             <button onclick="this.nextElementSibling.classList.toggle('hidden');" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium w-full text-left">Program Keahlian</button>
             <div class="hidden">
-                <a href="akuntansi.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Akuntansi Keuangan Lembaga</a>
-                <a href="bisnis.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bisnis Daring & Pemasaran</a>
+                <a href="akuntansi.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Akuntansi dan Keuangan Lembaga</a>
+                <a href="bisnis.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bisnis Daring dan Pemasaran</a>
             </div>
             <a href="kegiatan.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kegiatan</a>
             <a href="fasilitas.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Fasilitas</a>
             <a href="kontak.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
             <a href="pendaftaran.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
-            <a href="berita.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Berita</a>
-            <?php if ($isLoggedIn): ?>
+            <a href="berita.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Berita</a>
+            <?php if ($isLoggedIn) : ?>
                 <span class="block text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Welcome, <?php echo $_SESSION['username']; ?></span>
-            <?php else: ?>
+            <?php else : ?>
                 <a href="login.php" class="block bg-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">SIGN IN</a>
             <?php endif; ?>
         </div>
     </header>
-
-    <div class="container mx-auto py-8">
-        <h1 class="text-3xl font-bold mb-8">Fasilitas Sekolah</h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <?php
-            $fasilitas = [
-                ["name" => "Perpustakaan", "image" => "perpustakaan.jpg"],
-                ["name" => "Laboratorium Komputer", "image" => "lab_komputer.jpg"],
-                ["name" => "Ruang Kelas", "image" => "ruang_kelas.jpg"],
-                ["name" => "Lapangan Olahraga", "image" => "lapangan_olahraga.jpg"],
-                ["name" => "Aula Serbaguna", "image" => "aula_serbaguna.jpg"],
-                ["name" => "Kantin", "image" => "kantin.jpg"]
-            ];
-
-            foreach ($fasilitas as $item) {
-                echo '
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <img src="logo.jpg"' . $item["image"] . '" alt="' . $item["name"] . '" class="w-full h-48 object-cover mb-4">
-                    <h2 class="text-2xl font-bold mb-2">' . $item["name"] . '</h2>
-                    <p class="text-gray-700">Fasilitas ini menyediakan berbagai kebutuhan untuk mendukung kegiatan belajar mengajar.</p>
-                </div>';
-            }
-            ?>
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+    <main class="container mx-auto py-8 flex-grow">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Fasilitas SMK Makarya Tangerang</h1>
+        <div class="gallery-wrap grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="relative">
+                <img src="foto lapangan makarya.png" alt="Kegiatan 1" class="w-full h-64 object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2">Lapangan</div>
+            </div>
+            <div class="relative">
+                <img src="ruangkelas.jpg" alt="Kegiatan 2" class="w-full h-64 object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2">Kelas</div>
+            </div>
+            <div class="relative">
+                <img src="labkom.jpg" alt="Kegiatan 3" class="w-full h-64 object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2">Laboratorium Komputer</div>
+            </div>
+            <div class="relative">
+                <img src="perpus.jpg" alt="Kegiatan 3" class="w-full h-64 object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2">Perpustakaan</div>
+            </div>
+            <div class="relative">
+                <img src="gerbang.jpg" alt="Kegiatan 3" class="w-full h-64 object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2">Gedung</div>
+            </div>
+            <!-- Add more images as needed -->
         </div>
-    </div>
+    </main>
 
     <footer class="bg-gray-900 text-gray-300 mt-8">
     <div class="container mx-auto py-10 px-5 flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0">
@@ -192,17 +192,17 @@ $isLoggedIn = isset($_SESSION['username']);
         <p class="text-gray-400">&copy; 2023 SMK MAKARYA TANGERANG. All rights reserved.</p>
     </div>
 </footer>
-<script src="https://unpkg.com/flowbite@1.5/dist/flowbite.min.js"></script>
-<script>
-        document.getElementById('mobile-menu-button').onclick = function() {
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.0/dist/flowbite.min.js"></script>
+    <script>
+        function toggleDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            dropdown.classList.toggle('hidden');
+        }
+
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
-        };
-    </script>
-         <script>
-        AOS.init();
-        document.getElementById('mobile-menu-button').onclick = function () {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        };
+        });
     </script>
 </body>
 </html>

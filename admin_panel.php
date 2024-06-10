@@ -3,7 +3,7 @@ session_start();
 require 'conn.php';
 
 if (!isset($_SESSION["user_id"])) {
-    header("Location: http://localhost/website-makarya/login.php/");
+    header("Location: login.php");
     exit();
  }
 ?>

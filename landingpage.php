@@ -19,7 +19,7 @@ $result = mysqli_query($conn, $sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMK MAKARYA 3 TANGERANG</title>
+    <title>SMK MAKARYA TANGERANG</title>
     <link rel="icon" type="image/x-icon" href="logo.jpg">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.1/flowbite.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
@@ -216,26 +216,6 @@ $result = mysqli_query($conn, $sql);
                 </div>
             </div>
         </section> -->
-        <section id="contact" class="py-16 bg-gray-200" data-aos="fade-up">
-            <div class="container mx-auto text-center">
-                <h2 class="text-3xl font-bold mb-8">Contact Us</h2>
-                <form action="#" method="POST" class="space-y-4 max-w-md mx-auto">
-                    <div>
-                        <label for="name" class="block text-gray-700">Name</label>
-                        <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-200" required>
-                    </div>
-                    <div>
-                        <label for="email" class="block text-gray-700">Email</label>
-                        <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-200" required>
-                    </div>
-                    <div>
-                        <label for="message" class="block text-gray-700">Message</label>
-                        <textarea id="message" name="message" rows="4" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-200" required></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">Send Message</button>
-                </form>
-            </div>
-        </section>
     </main>
 
 

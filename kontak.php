@@ -13,7 +13,6 @@ $isLoggedIn = isset($_SESSION['username']);
     <link href="https://cdn.jsdelivr.net/npm/flowbite@1.6.0/dist/flowbite.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
 <header class="shadow-md bg-gray-800 sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
             <div class="flex items-center space-x-4">
@@ -88,6 +87,7 @@ $isLoggedIn = isset($_SESSION['username']);
             <?php endif; ?>
         </div>
     </header>
+    <body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
     <!-- Contact Section -->
     <section class="container mx-auto px-5 py-24">
         <div class="text-center mb-12">

@@ -5,6 +5,7 @@ $isLoggedIn = isset($_SESSION['username']);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +13,7 @@ $isLoggedIn = isset($_SESSION['username']);
     <link rel="icon" type="image/x-icon" href="logo.jpg">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@1.6.0/dist/flowbite.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-   
 </head>
-
-<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
 <header class="shadow-md bg-gray-800 sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
             <div class="flex items-center space-x-4">
@@ -53,9 +51,9 @@ $isLoggedIn = isset($_SESSION['username']);
                 <a href="kontak.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
                 <a href="pendaftaran.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
                 <a href="berita.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Berita</a>
-                <?php if ($isLoggedIn): ?>
+                <?php if ($isLoggedIn) : ?>
                     <span class="text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Welcome, <?php echo $_SESSION['username']; ?></span>
-                <?php else: ?>
+                <?php else : ?>
                     <a href="login.php" class="bg-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">SIGN IN</a>
                 <?php endif; ?>
             </div>
@@ -82,75 +80,118 @@ $isLoggedIn = isset($_SESSION['username']);
             <a href="fasilitas.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Fasilitas</a>
             <a href="kontak.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
             <a href="pendaftaran.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
-            <a href="berita.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Berita</a>
-            <?php if ($isLoggedIn): ?>
+            <a href="berita.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Berita</a>
+            <?php if ($isLoggedIn) : ?>
                 <span class="block text-gray-300 px-3 py-2 rounded-md text-sm font-medium">Welcome, <?php echo $_SESSION['username']; ?></span>
-            <?php else: ?>
+            <?php else : ?>
                 <a href="login.php" class="block bg-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">SIGN IN</a>
             <?php endif; ?>
         </div>
     </header>
-
-    <main class="flex-grow">
-        <div class="container">
-            <div class="row">
-            <div class="col-md-12">
-            <p></p>
-            <center><b><h1>Galeri Kegiatan Sekolah</h1></b></center> 
-        </div>
-        </div>
-    </div><div class="gallery-wrap">
-        <div class="container">
-    <!-- Style 2 -->
-    <div class="row">
-    <div class="col-md-4">
-        
-        <div class="blog-category_block">
-        <h2>Album Galeri</h2>
-            <ul>
-            <li><a class="selected" href="#">Semua</a></li>
-                <li><a href="https://smkmakarya1.sch.id/galeri/album/13">Demo Ekskul</a></li>
-                <li><a href="https://smkmakarya1.sch.id/galeri/album/12">Makarya 1 Competition</a></li>
-                <li><a href="https://smkmakarya1.sch.id/galeri/album/11">Memperingati Hari Kemerdekaan 17 Agustus</a></li>
-                <li><a href="https://smkmakarya1.sch.id/galeri/album/10">Maulid Nabi SAW</a></li>
-                <li><a href="https://smkmakarya1.sch.id/galeri/album/9">Perkemahan Kamis dan Jumat (Perkaju)</a></li>
-                <li><a href="https://smkmakarya1.sch.id/galeri/album/8">Masa Pengenalan Lingkungan Sekolah (MPLS)</a></li>
-                <li><a href="https://smkmakarya1.sch.id/galeri/album/7">Qurban</a></li>
-                <li><a href="https://smkmakarya1.sch.id/galeri/album/6">LDKS</a></li>
-                <li><a href="https://smkmakarya1.sch.id/galeri/album/3">Uji Sertifikasi Profesi</a></li>
-                </ul>
+<body class="bg-gray-100 text-gray-800">
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-semibold text-center mb-8">Galeri Kegiatan SMK Makarya Tangerang</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="paskibra.jpg" alt="Kegiatan 1" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Paskibra</h3>
+                </div>
             </div>
-    </div><br>
-
-    <div class="col-md-8">
-        <div id="gallery">
-        <div id="gallery-content">
-            <div class="galeri gallery-content-center-full isotope" id="gallery-content-center" style="position: relative; overflow: hidden; height: 9800px;">
-                        <a href="perpus.jpg" class="image-link2">
-                <img src="perpus.jpg" class="all img-fluid isotope-item" alt="#" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
-                </a>
-                        <a href="gerbang.jpg" class="image-link2">
-                <img src="gerbang.jpg" class="all img-fluid isotope-item" alt="#" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 200px, 0px);">
-                </a>
-                        <a href="labkom.jpg" class="image-link2">
-                <img src="labkom.jpg" class="all img-fluid isotope-item" alt="#" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 400px, 0px);">
-                </a>
-                        <a href="foto lapangan makarya.png" class="image-link2">
-                <img src="foto lapangan makarya.png" class="all img-fluid isotope-item" alt="#" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 600px, 0px);">
-                </a>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="classmeeting.jpg" alt="Kegiatan 2" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Class Meeting</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="beautyclass.jpg" alt="Kegiatan 3" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Beauty Class</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="santunan.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Santunan</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="lcc.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Lomba Cerdas Cermat</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="magang.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Magang Mahasiswa</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="maulidnabi.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Maulid Nabi</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="mpls.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">MPLS</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="pemberian beasiswa siswa berprestasi.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Pemberian Beasiswa Siswa Berprestasi</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="pembinaan siswa.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Pembinaan Siswa</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="penyuluhan dinas kesehatan.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Penyuluhan dari Dinas Kesehatan</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="perpisahan.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Pelepasan dan Wisuda</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="ujikompetensi.jpeg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Uji Kompetensi</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="upacara.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Upacara Bendera</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="lombakompetensi.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Lomba Kompetensi Siswa</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                <img src="kegiatankesiswaan.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Kegiatan Kesiswaan SMK</h3>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
-</div>
-</div>
-<!--//End Style 2 -->
-
-</div>
-</div>
     </main>
 
-   <!-- Footer Section -->
-   <footer class="bg-gray-900 text-gray-300 mt-8">
+    <footer class="bg-gray-900 text-gray-300 mt-8">
     <div class="container mx-auto py-10 px-5 flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0">
         <!-- Section Kontak -->
         <div class="w-full md:w-1/3 text-center md:text-left">
@@ -228,19 +269,16 @@ $isLoggedIn = isset($_SESSION['username']);
     </div>
 </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.0/dist/flowbite.js"></script>
-    <script src="script.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.0/dist/flowbite.min.js"></script>
     <script>
-        document.getElementById('mobile-menu-button').onclick = function() {
+        function toggleDropdown(dropdownId) {
+            var dropdown = document.getElementById(dropdownId);
+            dropdown.classList.toggle('hidden');
+        }
+
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
-        };
-    </s>
-         <script>
-        AOS.init();
-        document.getElementById('mobile-menu-button').onclick = function () {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        };
+        });
     </script>
 </body>
 

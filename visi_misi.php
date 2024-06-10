@@ -13,7 +13,6 @@ $isLoggedIn = isset($_SESSION['username']);
     <link href="https://cdn.jsdelivr.net/npm/flowbite@1.6.0/dist/flowbite.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
 <header class="shadow-md bg-gray-800 sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
             <div class="flex items-center space-x-4">
@@ -91,6 +90,7 @@ $isLoggedIn = isset($_SESSION['username']);
     <header class="bg-blue-800 text-white p-4 text-center">
         <h1 class="text-3xl font-bold">Visi, Misi, dan Tujuan SMK Makarya Tangerang</h1>
     </header>
+    <body>
     <div class="container mx-auto p-4">
         <section class="mb-4">
             <div class="card bg-white shadow-lg rounded-lg p-4">

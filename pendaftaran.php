@@ -12,7 +12,6 @@ $isLoggedIn = isset($_SESSION['username']);
     <link rel="icon" type="image/x-icon" href="logo.jpg">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
 <header class="shadow-md bg-gray-800 sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
             <div class="flex items-center space-x-4">
@@ -87,7 +86,7 @@ $isLoggedIn = isset($_SESSION['username']);
                 <?php endif; ?>
         </div>
     </header>
-
+    <body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
     <main class="flex-grow">
         <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Informasi Pendaftaran SMK Makarya Tangerang</h1>

@@ -72,7 +72,7 @@ if (isset($_POST["login"])) {
     <div class="container mx-auto max-w-md">
         <div class="bg-white shadow-lg rounded-xl overflow-hidden p-6">
             <div class="flex justify-center mb-6">
-                <img src="logo.jpg" alt="Logo" class="h-52">
+                <img src="img/logo.jpg" alt="Logo" class="h-52">
             </div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="space-y-6">
                 <div class="relative">

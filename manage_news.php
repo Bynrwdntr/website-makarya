@@ -33,7 +33,7 @@ $upload_dir = 'C:/xampp/htdocs/website-makarya-main/uploads/';
             <nav class="space-y-4">
                 <a href="manage_news.php" class="block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">News</a>
                 <a href="manage_users.php" class="block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Users</a>
-                <a href="landingpage.php" class="block bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Log Out</a>
+                <a href="logout.php" class="block bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Log Out</a>
                 <!-- Add more menu items here -->
             </nav>
         </aside>

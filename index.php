@@ -20,7 +20,7 @@ $result = mysqli_query($conn, $sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMK MAKARYA TANGERANG</title>
-    <link rel="icon" type="image/x-icon" href="logo.jpg">
+    <link rel="icon" type="image/x-icon" href="img/logo.jpg">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.1/flowbite.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -31,7 +31,7 @@ $result = mysqli_query($conn, $sql);
     <header class="shadow-md bg-gray-800 sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
             <div class="flex items-center space-x-4">
-                <img class="max-h-16 w-auto" src="logo.png" alt="Logo">
+                <img class="max-h-16 w-auto" src="img/logo.png" alt="Logo">
             </div>
             <div class="hidden sm:flex space-x-4 ml-auto">
                 <a href="landingpage.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
@@ -107,19 +107,19 @@ $result = mysqli_query($conn, $sql);
         <div id="gallery" class="relative w-full" data-carousel="slide">
             <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="gerbang.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 1">
+                    <img src="img/gerbang.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 1">
                 </div>
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="foto lapangan makarya.png" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 2">
+                    <img src="img/foto lapangan makarya.png" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 2">
                 </div>
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="labkom.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 3">
+                    <img src="img/labkom.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 3">
                 </div>
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="perpus.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 4">
+                    <img src="img/perpus.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 4">
                 </div>
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="/img/ruangkelas.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 5">
+                    <img src="img//img/ruangkelas.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 5">
                 </div>
             </div>
             <button type="button" class="absolute top-1/2 left-0 z-50 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none transform -translate-y-1/2" data-carousel-prev>
@@ -182,7 +182,7 @@ $result = mysqli_query($conn, $sql);
                     ?>
                         <div class="bg-gray-100 p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
                             <?php if (isset($row['image']) && $row['image'] != '') : ?>
-                                <img src="<?php echo $row['image']; ?>" alt="News Image" class="w-full h-48 object-cover mb-4 rounded">
+                                <img src="img/<?php echo $row['image']; ?>" alt="News Image" class="w-full h-48 object-cover mb-4 rounded">
                             <?php endif; ?>
                             <h3 class="text-xl font-bold mb-4"><?php echo $row['title']; ?></h3>
                             <p class="overflow-hidden text-ellipsis whitespace-nowrap"><?php echo $row['content']; ?></p>

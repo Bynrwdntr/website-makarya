@@ -16,10 +16,10 @@ $isLoggedIn = isset($_SESSION['username']);
 <header class="shadow-md bg-gray-800 sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
             <div class="flex items-center space-x-4">
-                <img class="max-h-16 w-auto" src="logo.png" alt="Logo">
+                <img class="max-h-16 w-auto" src="img/logo.png" alt="Logo">
             </div>
             <div class="hidden sm:flex space-x-4 ml-auto">
-                <a href="landingpage.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                <a href="index.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
                 <div class="relative">
                     <button onclick="this.nextElementSibling.classList.toggle('hidden');" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center">
                         Informasi Sekolah
@@ -63,7 +63,7 @@ $isLoggedIn = isset($_SESSION['username']);
             </button>
         </nav>
         <div class="sm:hidden hidden" id="mobile-menu">
-            <a href="landingpage.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+            <a href="index.php" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
             <button onclick="this.nextElementSibling.classList.toggle('hidden');" class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium w-full text-left">Informasi Sekolah</button>
             <div class="hidden">
                 <a href="sejarah.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sejarah</a>
@@ -94,7 +94,7 @@ $isLoggedIn = isset($_SESSION['username']);
 <div class="container mx-auto my-5 p-5 bg-white shadow rounded">
     <section>
         <div class="text-center">
-            <img src="logo.jpg" alt="Logo Sekolah" class="mx-auto">
+            <img src="img/logo.jpg" alt="Logo Sekolah" class="mx-auto">
         </div>
         <h2 class="text-2xl font-bold text-center mt-4">SEJARAH BERDIRINYA YAYASAN PENDIDIKAN MAKARYA</h2>
         <p class="text-justify mt-2">

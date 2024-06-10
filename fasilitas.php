@@ -16,7 +16,7 @@ $isLoggedIn = isset($_SESSION['username']);
 <header class="shadow-md bg-gray-800 sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
             <div class="flex items-center space-x-4">
-                <img class="max-h-16 w-auto" src="logo.png" alt="Logo">
+                <img class="max-h-16 w-auto" src="img/logo.png" alt="Logo">
             </div>
             <div class="hidden sm:flex space-x-4 ml-auto">
                 <a href="landingpage.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
@@ -92,23 +92,23 @@ $isLoggedIn = isset($_SESSION['username']);
         <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Fasilitas SMK Makarya Tangerang</h1>
         <div class="gallery-wrap grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             <div class="relative">
-                <img src="foto lapangan makarya.png" alt="Kegiatan 1" class="w-full h-64 object-cover">
+                <img src="img/foto lapangan makarya.png" alt="Kegiatan 1" class="w-full h-64 object-cover">
                 <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2">Lapangan</div>
             </div>
             <div class="relative">
-                <img src="ruangkelas.jpg" alt="Kegiatan 2" class="w-full h-64 object-cover">
+                <img src="img/ruangkelas.jpg" alt="Kegiatan 2" class="w-full h-64 object-cover">
                 <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2">Kelas</div>
             </div>
             <div class="relative">
-                <img src="labkom.jpg" alt="Kegiatan 3" class="w-full h-64 object-cover">
+                <img src="img/labkom.jpg" alt="Kegiatan 3" class="w-full h-64 object-cover">
                 <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2">Laboratorium Komputer</div>
             </div>
             <div class="relative">
-                <img src="perpus.jpg" alt="Kegiatan 3" class="w-full h-64 object-cover">
+                <img src="img/perpus.jpg" alt="Kegiatan 3" class="w-full h-64 object-cover">
                 <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2">Perpustakaan</div>
             </div>
             <div class="relative">
-                <img src="gerbang.jpg" alt="Kegiatan 3" class="w-full h-64 object-cover">
+                <img src="img/gerbang.jpg" alt="Kegiatan 3" class="w-full h-64 object-cover">
                 <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2">Gedung</div>
             </div>
             <!-- Add more images as needed -->

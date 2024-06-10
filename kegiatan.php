@@ -17,7 +17,7 @@ $isLoggedIn = isset($_SESSION['username']);
 <header class="shadow-md bg-gray-800 sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
             <div class="flex items-center space-x-4">
-                <img class="max-h-16 w-auto" src="logo.png" alt="Logo">
+                <img class="max-h-16 w-auto" src="img/logo.png" alt="Logo">
             </div>
             <div class="hidden sm:flex space-x-4 ml-auto">
                 <a href="landingpage.php" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
@@ -93,97 +93,97 @@ $isLoggedIn = isset($_SESSION['username']);
         <h1 class="text-3xl font-semibold text-center mb-8">Galeri Kegiatan SMK Makarya Tangerang</h1>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="paskibra.jpg" alt="Kegiatan 1" class="w-full h-48 object-cover">
+                <img src="img/paskibra.jpg" alt="Kegiatan 1" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-2">Paskibra</h3>
                 </div>
             </div>
             <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="classmeeting.jpg" alt="Kegiatan 2" class="w-full h-48 object-cover">
+                <img src="img/classmeeting.jpg" alt="Kegiatan 2" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-2">Class Meeting</h3>
                 </div>
             </div>
             <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="beautyclass.jpg" alt="Kegiatan 3" class="w-full h-48 object-cover">
+                <img src="img/beautyclass.jpg" alt="Kegiatan 3" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-2">Beauty Class</h3>
                 </div>
             </div>
             <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="santunan.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <img src="img/santunan.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-2">Santunan</h3>
                 </div>
             </div>
             <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="lcc.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <img src="img/lcc.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-2">Lomba Cerdas Cermat</h3>
                 </div>
             </div>
             <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="magang.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <img src="img/magang.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-2">Magang Mahasiswa</h3>
                 </div>
             </div>
             <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="maulidnabi.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <img src="img/maulidnabi.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-2">Maulid Nabi</h3>
                 </div>
             </div>
             <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="mpls.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <img src="img/mpls.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-2">MPLS</h3>
                 </div>
             </div>
             <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="pemberian beasiswa siswa berprestasi.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <img src="img/pemberian beasiswa siswa berprestasi.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-2">Pemberian Beasiswa Siswa Berprestasi</h3>
                 </div>
             </div>
             <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="pembinaan siswa.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <img src="img/pembinaan siswa.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-2">Pembinaan Siswa</h3>
                 </div>
             </div>
             <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="penyuluhan dinas kesehatan.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <img src="img/penyuluhan dinas kesehatan.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-2">Penyuluhan dari Dinas Kesehatan</h3>
                 </div>
             </div>
             <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="perpisahan.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <img src="img/perpisahan.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-2">Pelepasan dan Wisuda</h3>
                 </div>
             </div>
             <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="ujikompetensi.jpeg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <img src="img/ujikompetensi.jpeg" alt="Kegiatan 4" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-2">Uji Kompetensi</h3>
                 </div>
             </div>
             <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="upacara.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <img src="img/upacara.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-2">Upacara Bendera</h3>
                 </div>
             </div>
             <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="lombakompetensi.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <img src="img/lombakompetensi.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-2">Lomba Kompetensi Siswa</h3>
                 </div>
             </div>
             <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                <img src="kegiatankesiswaan.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
+                <img src="img/kegiatankesiswaan.jpg" alt="Kegiatan 4" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-lg font-semibold mb-2">Kegiatan Kesiswaan SMK</h3>
                 </div>

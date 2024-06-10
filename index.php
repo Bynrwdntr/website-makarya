@@ -119,7 +119,7 @@ $result = mysqli_query($conn, $sql);
                     <img src="perpus.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 4">
                 </div>
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="ruangkelas.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 5">
+                    <img src="/img/ruangkelas.jpg" class="absolute block w-full h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" alt="Image 5">
                 </div>
             </div>
             <button type="button" class="absolute top-1/2 left-0 z-50 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none transform -translate-y-1/2" data-carousel-prev>

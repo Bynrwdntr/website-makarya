@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'conn.php';
+require '../db/conn.php';
 
 $errorMsg = '';
 
@@ -30,7 +30,7 @@ if (isset($_POST["login"])) {
     $password = $_POST["password"];
 
     if (login($username, $password)) {
-        header("Location: http://localhost/website-makarya/admin_panel.php");
+        header("Location: ../dashboard/admin_panel.php");
         exit();
     } else {
         $errorMsg = "Invalid username or password!";
@@ -45,7 +45,7 @@ if (isset($_POST["login"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
-    <link rel="icon" type="image/x-icon" href="img/logo.jpg">
+    <link rel="icon" type="image/x-icon" href="../img/logo.jpg">
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://unpkg.com/flowbite@1.5/dist/flowbite.min.css" rel="stylesheet">
@@ -55,7 +55,7 @@ if (isset($_POST["login"])) {
     <div class="container mx-auto max-w-md">
         <div class="bg-white shadow-lg rounded-xl overflow-hidden p-6">
             <div class="flex justify-center mb-6">
-                <img src="img/logo.jpg" alt="Logo" class="h-52">
+                <img src="../img/logo.jpg" alt="Logo" class="h-52">
             </div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="space-y-6">
                 <div class="relative">

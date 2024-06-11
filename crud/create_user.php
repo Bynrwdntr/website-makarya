@@ -1,5 +1,5 @@
 <?php
-require 'conn.php';
+require '../db/conn.php';
 session_start();
 
 // if (!isset($_SESSION['user_id'])) {
@@ -36,9 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body class="bg-gray-100 text-gray-800">
-    <div class="container mx-auto mt-10 flex">
+    <div class="container mx-auto mt-10 flex flex-col md:flex-row">
         <!-- Sidebar -->
-        <aside class="w-1/4 bg-white p-6 rounded shadow-md">
+        <aside class="w-full md:w-1/4 bg-white p-6 rounded shadow-md mb-6 md:mb-0">
             <h2 class="text-2xl mb-4">Admin Menu</h2>
             <nav class="space-y-4">
                 <a href="manage_news.php" class="block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Manage News</a>
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </nav>
         </aside>
         <!-- Main Content -->
-        <main class="w-3/4 bg-white p-6 rounded shadow-md ml-6">
+        <main class="w-full md:w-3/4 bg-white p-6 rounded shadow-md md:ml-6">
             <h1 class="text-3xl mb-6">Add User</h1>
             <form action="create_user.php" method="post" class="bg-white">
                 <div class="mb-4">

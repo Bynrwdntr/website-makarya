@@ -1,5 +1,5 @@
 <?php
-require 'conn.php';
+require '../db/conn.php';
 session_start();
 
 // if (!isset($_SESSION['user_id'])) {
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (in_array($ext, $allowed_ext)) {
             // Generate unique name for the image to prevent overwriting existing images
             $image_name = uniqid() . '.' . $ext;
-            $image_path = "uploads/". $image_name;
+            $image_path = "../uploads/". $image_name;
             // Move uploaded image to specified location
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $image_path)) {
                 // Image uploaded successfully, continue with database operations
@@ -59,7 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -73,19 +72,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body class="bg-gray-100 text-gray-800">
-    <div class="container mx-auto mt-10 flex">
+    <div class="container mx-auto mt-10 flex flex-col md:flex-row">
         <!-- Sidebar -->
-        <aside class="w-1/4 bg-white p-6 rounded shadow-md">
+        <aside class="w-full md:w-1/4 bg-white p-6 rounded shadow-md mb-6 md:mb-0">
             <h2 class="text-2xl mb-4">Admin Menu</h2>
             <nav class="space-y-4">
-                <a href="manage_news.php" class="block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Manage News</a>
-                <a href="manage_users.php" class="block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Manage Users</a>
+                <a href="../crud/manage_news.php" class="block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Manage News</a>
+                <a href="../crud/manage_users.php" class="block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Manage Users</a>
                 <!-- Add more menu items here -->
             </nav>
         </aside>
 
         <!-- Main Content -->
-        <main class="w-3/4 bg-white p-6 rounded shadow-md ml-6">
+        <main class="w-full md:w-3/4 bg-white p-6 rounded shadow-md md:ml-6">
             <h1 class="text-3xl mb-6">Add News</h1>
             <form action="create_news.php" method="post" enctype="multipart/form-data">
                 <div class="mb-4">

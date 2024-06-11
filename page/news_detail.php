@@ -1,5 +1,5 @@
 <?php
-require 'conn.php';
+require '../db/conn.php';
 
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
@@ -17,7 +17,7 @@ if (isset($_GET["id"])) {
         exit();
     }
 } else {
-    header("Location: manage_news.php");
+    header("Location: ../crud/manage_news.php");
     exit();
 }
 ?>
@@ -41,7 +41,7 @@ if (isset($_GET["id"])) {
             <?php endif; ?>
             <p class="text-xl mb-4"><?php echo $news['content']; ?></p>
             <p class="text-gray-600">By <?php echo $news['author']; ?></p>
-            <a href="berita.php" class="text-blue-600 hover:underline">Back to News</a>
+            <a href="../page/berita.php" class="text-blue-600 hover:underline">Back to News</a>
         </div>
     </div>
 </body>

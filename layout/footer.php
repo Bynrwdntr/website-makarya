@@ -72,6 +72,6 @@
         </div>
     </div>
     <div class="mt-4 text-center">
-        <p class="text-gray-400">&copy; 2023 SMK MAKARYA TANGERANG. All rights reserved.</p>
+        <p class="text-gray-400">&copy; 2024 SMK MAKARYA TANGERANG. All rights reserved.</p>
     </div>
 </footer>
